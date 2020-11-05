@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Example of Auto Loading Bootstrap Modal on Page Load</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/popup.css">
+
+<script>
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
+</script>
+
+</head>
+<body>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Subscribe our Newsletter</h4>
+            </div>
+            <div class="modal-body">
+    
+              
+
+
+
+
+
+              <div id="card">
+                <div id="card-inside">
+                  <div class="wrap">
+                    <!-- <p>Hey son,</p> -->
+                    <h3>आज संकष्टी चतुर्थी!
+                      आजच्या या मंगल दिनी
+                      सर्व गणेशभक्तांच्या मनातील
+                      सर्व इच्छित मनोकामना
+                      श्री गणराय पूर्ण करोत..
+                      हीच गणरायाच्या चरणी प्रार्थना…
+                      सर्व भक्तांना संकष्टी चतुर्थीच्या हार्दिक शुभेच्छा!</h3>
+                    <img src="./images/BYLOGO_.png" alt="" srcset="" style="width: 320px;height: 250px;margin-top: 32px;">
+                    <p class="signed">ZEF</p>
+                    
+                  </div>
+                </div>
+            
+                <div id="card-front">
+                  <div class="wrap">
+                    <h1><img src="./images/lord-ganesha-2661114.jpg" alt="" srcset="" style="width: 400px;height: 400px;"></h1>
+                  </div>
+                  <button id="open">&gt;</button>
+                  <button id="close">&lt;</button>
+                </div>
+              </div>
+            
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+  (function() {
+function $(id) {
+return document.getElementById(id);
+}
+
+var card = $('card'),
+  openB = $('open'),
+  closeB = $('close'),
+  timer = null;
+console.log('wat', card);
+openB.addEventListener('click', function () {
+card.setAttribute('class', 'open-half');
+if (timer) clearTimeout(timer);
+timer = setTimeout(function () {
+  card.setAttribute('class', 'open-fully');
+  timer = null;
+}, 1000);
+});
+
+closeB.addEventListener('click', function () {
+card.setAttribute('class', 'close-half');
+if (timer) clearTimerout(timer);
+timer = setTimeout(function () {
+  card.setAttribute('class', '');
+  timer = null;
+}, 1000);
+});
+
+}());
+
+</script>
+</body>
+</html>
